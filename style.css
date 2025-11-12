@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Manrope", sans-serif;
+  font-family: sans-serif;
 }
 
 body {
@@ -67,8 +67,10 @@ button:hover {
 }
 
 ul {
-  margin-top: 30px;
-  width: 100%;
+    margin-top: 30px;
+    width: 100%;
+    list-style: none;
+    counter-reset: my-counter;
 }
 
 li {
@@ -99,4 +101,10 @@ li button {
 
 li button:hover {
   background: #ff7675;
+}
+
+li::before {
+  counter-increment: my-counter;
+  content: counter(my-counter) ") ";
+  font-weight: bold;
 }
